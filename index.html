@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>\operaçoes matematicas</title> 
+    <link rel="art.css" href="art.css">
+
+
+    <style>
+ 
+h1{
+  text-transform:uppercase;
+  font-size:72px;
+  font-family:'Verdana';
+  padding:30px;
+}
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa; /* Um tom de cinza bem claro */
+    color: #343a40; /* Cinza escuro para o texto */
+    padding-top: 20px; /* Adiciona um espaço no topo */
+    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+    text-align:center;
+  background:#dfdfdf;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 150px; /* Largura um pouco maior para os inputs */
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; /* Azul primário */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul mais escuro no hover */
+}
+
+p#resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745; /* Verde para o resultado */
+}
+
+/* Estilizando o container dos inputs e botões para melhor organização */
+div {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os inputs e botões */
+    margin-bottom: 15px; /* Espaçamento abaixo do grupo de inputs/botões */
+    align-items: center; /* Alinha verticalmente os itens */
+}
+    </style>
+ 
+<script>
+    //utiliza duas variaveis e faz a soma delas
+    function Soma() {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let soma = parseInt(num1) + parseInt(num2);
+        document.getElementById("resultado").innerHTML = "Resultado da soma: " + soma;
+    }
+//utiliza duas variaveis e faz a multiplicação delas
+    const Multiplicacao = () => {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let resultado = parseInt(num1) * parseInt(num2);
+        document.getElementById("resultado").innerHTML = "Resultado da multiplicação: " + resultado;
+    }
+//utiliza duas variaveis e faz a divisao delas
+    const Divisao = () => {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let resultado = parseInt(num1) / parseInt(num2);
+        document.getElementById("resultado").innerHTML = "Resultado da divisão: " + resultado;
+    }
+//utiliza duas variaveis e faz a subtraçao delas
+    const Subtracao = () => {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let resultado = parseInt(num1) - parseInt(num2);
+        document.getElementById("resultado").innerHTML = "Resultado da subtração: " + resultado;
+    }
+    
+    jQuery(document).ready(function(){
+   $('h1').mousemove(function(e){
+     var rXP = (e.pageX - this.offsetLeft-$(this).width()/2);
+     var rYP = (e.pageY - this.offsetTop-$(this).height()/2);
+     $('h1').css('text-shadow', +rYP/10+'px '+rXP/80+'px rgba(227,6,19,.8), '+rYP/8+'px '+rXP/60+'px rgba(255,237,0,1), '+rXP/70+'px '+rYP/12+'px rgba(0,159,227,.7)');
+   });
+});
+</script>
+ 
+</head>
+ 
+<body>
+    <h1>JavaScript</h1>
+    <!--cria duas variaveis onde armazena os dados preenchidos -->
+    <input type="text" name="num1" id="num1">
+    <input type="text" name="num2" id="num2">
+    
+    <!--Cria um botão para cada função -->
+    <button type="button" onclick="Calcular()">Soma</button>
+    <button type="button" onclick="Multiplicacao()">Multiplicação</button>
+    <button type="button" onclick="Divisao()">Divisão</button>
+    <button type="button" onclick="Subtracao()">Subtração</button>
+    
+    <p id="resultado"></p>
+</body>
+</html>
